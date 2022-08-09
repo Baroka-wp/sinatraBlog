@@ -9,11 +9,10 @@ class Post < ApplicationRecord
     validates :title, presence: true
 
     def update_posts_counter
-        user.update(postCounter: user.posts.count)
+        user.update(postsCounter: user.posts.count)
     end
 
-    def most_recent_comment(post_id)
-        post = Post.find_by(id: post_id)
-        post.comments.limit(5)
+    def five_laster_comments
+        comments.last(5)
     end
 end
