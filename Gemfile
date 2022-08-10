@@ -25,7 +25,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
+  gem 'web-console' 
   # gem "spring"
 end
 
@@ -33,4 +33,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
 end
