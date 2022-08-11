@@ -2,7 +2,7 @@
 
 # Hello Rails
 
-Study RoR base on hello world project.
+Study RoR base on Blog project.
 
 ## Built With
 
@@ -28,10 +28,10 @@ In the terminal, go to your file directory and run this command.
 
 > Clone the repository
 ```
-$ git clone https://github.com/Baroka-wp/hellorails
+$ git clone https://github.com/Baroka-wp/sinatraBlog
 ```
 ```
-$ cd hellorails
+$ cd sinatraBlog
 ```
 > Install Gemfile
 
