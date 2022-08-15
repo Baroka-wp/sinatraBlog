@@ -3,15 +3,15 @@ class Post < ApplicationRecord
   # default_scope -> { order(created_at: :desc) }
   after_initialize :init
 
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 250 }
-  validates :commentsCounter, :likesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :comments_count, :likes_count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def update_posts_counter
-    user.update(postsCounter: user.posts.count)
+    user.update(posts_count: user.posts.count)
   end
 
   def five_laster_comments
@@ -21,7 +21,7 @@ class Post < ApplicationRecord
   private
 
   def init
-    self.commentsCounter ||= 0
-    self.likesCounter ||= 0
+    self.comments_count ||= 0
+    self.likes_count ||= 0
   end
 end
