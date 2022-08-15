@@ -59,3 +59,9 @@ require 'faker'
 #     user.update(photo: images[i])
 #     i += 1
 # end
+
+user = User.find_by(id: 3)
+user.posts.create(
+    title: Faker::Lorem.sentence(word_count: 3), 
+    text: Faker::Quote.famous_last_words, user_id: user.id
+)

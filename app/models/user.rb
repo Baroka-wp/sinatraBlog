@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   # Validations
   validates :name, presence: true
-  validates :postsCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :posts_count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # Costum methods
   def three_laster_posts
@@ -16,6 +16,6 @@ class User < ApplicationRecord
   end
 
   def init
-    self.postsCounter ||= 0
+    self.posts_count ||= 0
   end
 end
