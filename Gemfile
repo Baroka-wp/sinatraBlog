@@ -22,6 +22,7 @@ gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 4.0.0.beta2'
 end
 
 group :development do
@@ -31,7 +32,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'selenium-webdriver'
   gem 'rails-controller-testing'
   gem 'webdrivers'

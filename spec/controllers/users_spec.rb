@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-    before do
+    before(:each) do
         @user = User.create(
             name: 'Tom',
             photo: 'https://unsplash.com/photos/F_-0BxGuVvo', 
