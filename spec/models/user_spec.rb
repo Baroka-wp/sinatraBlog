@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'is not valid with postcounter in string type' do
-      subject.postsCounter = 'er'
+      subject.posts_count = 'er'
       expect(subject).to_not be_valid
     end
 

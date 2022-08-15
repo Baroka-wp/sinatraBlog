@@ -30,12 +30,9 @@ RSpec.describe Like, type: :model do
     end
   end
   context 'Costum methods' do
-    it 'not update post like count' do
-      expect(subject.post.likesCounter).to eq(0)
-    end
     it 'update post like count' do
       subject.update_like_counter
-      expect(subject.post.likesCounter).to eq(1)
+      expect(subject.post.likes_count).to eq(1)
     end
   end
 end
