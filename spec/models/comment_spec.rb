@@ -34,12 +34,9 @@ RSpec.describe Comment, type: :model do
     end
   end
   context 'Costum methods' do
-    it 'not update post comment count' do
-      expect(subject.post.commentsCounter).to eq(0)
-    end
     it 'update post comment count' do
       subject.update_comment_counter
-      expect(subject.post.commentsCounter).to eq(1)
+      expect(subject.post.comments_count).to eq(1)
     end
   end
 end

@@ -26,11 +26,11 @@ RSpec.describe Post, type: :model do
       expect(subject).to_not be_valid
     end
     it 'is not valid with commentsCounter in string type' do
-      subject.commentsCounter = 'string'
+      subject.comments_count = 'string'
       expect(subject).to_not be_valid
     end
     it 'is not valid with likesCounter in string type' do
-      subject.likesCounter = 'string'
+      subject.likes_count = 'string'
       expect(subject).to_not be_valid
     end
   end

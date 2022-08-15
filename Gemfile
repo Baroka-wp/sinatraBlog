@@ -33,5 +33,6 @@ group :test do
   gem 'capybara'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
   gem 'webdrivers'
 end
