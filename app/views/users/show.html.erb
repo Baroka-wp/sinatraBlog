@@ -1,20 +1,19 @@
 <div class="user_details">
     <section class="top">
-        <%= image_tag @user.photo, size: "160x90", alt: "Edit Entry"%>
+        <%= image_tag "image.jpeg", size: "160x90", alt: "Edit Entry"%>
         <div>
-            <h1><%= @user.name %></h1>
-            <p>Number of posts : <%= @user.posts_count %></p>
+            <h1>Username</h1>
+            <p>Number of posts : 5</p>
         </div>
     </section>
     <section class="bio">
         <h3>Bio</h3>
-        <p><%= @user.bio %></p>
+        <p> </p>
     </section>
     <section class="posts">
         <% @user.posts.each_with_index do |post, index| %>
             <div class="post_info">
-                <h3>Post#<%=index%>: <%= post.title %></h3>
-                <p><%= post.text %></p>
+                <h3>Post# <%=index%></h3>
             </div>
         <% end %>
     </section>
