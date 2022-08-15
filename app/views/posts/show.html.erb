@@ -1,2 +1,13 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="post_show">
+    <div class="post">
+        <p><%= @post.title %></p>
+        <small><%= @post.comments_count %></p>
+    </div>
+    <p><%= @post.text %></p>
+    <div class="comments">
+        <% @post.comments.each do |comment| %>
+            <p><%= comment.text %> By: <%= comment.user.name %></p>
+        <% end %>
+    </div>
+</div>
+
