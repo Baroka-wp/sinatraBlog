@@ -33,17 +33,29 @@ require 'faker'
 # --- Query ---
 # Count comments on post where id equals 10
 
-post = Post.find_by(id: 10)
-post.comments.count
+# post = Post.find_by(id: 10)
+# post.comments.count
 
-# Count all posts of user with id 3
-user = User.find_by(id: 3)
-user.posts.count
+# # Count all posts of user with id 3
+# user = User.find_by(id: 3)
+# user.posts.count
 
-# delete all comments where user_id is odd
-Comment.where("user_id%2 != 0").destroy_all
+# # delete all comments where user_id is odd
+# Comment.where("user_id%2 != 0").destroy_all
 
-# update
+# # update
 
-url = 'https://unsplash.com/photos/jJlb9KW7SQQ'
-user = User.find_by(id: 3).update(photo: url)
+# url = 'https://unsplash.com/photos/jJlb9KW7SQQ'
+# user = User.find_by(id: 3).update(photo: url)
+
+# images = [
+#     'https://images.unsplash.com/photo-1660503427782-f9c627e7066e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80',
+#     'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80',
+#     'https://images.unsplash.com/photo-1660536754523-13d686a48178?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=857&q=80'
+# ]
+
+# i = 0
+# User.all.each do |user|
+#     user.update(photo: images[i])
+#     i += 1
+# end
