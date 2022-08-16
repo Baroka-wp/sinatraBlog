@@ -11,7 +11,7 @@
                         <p>0 comment</p>
                     <% else %>
                         <% post.comments.limit(3).each do |comment| %>
-                            <p>> <%= comment.text %> <span>by: <%= comment.user.name %><span></p>
+                            <p>~> <%= comment.text %> <span>by: <%= comment.user.name %><span></p>
                         <% end %>
                     <% end %>
                 </div>
