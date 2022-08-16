@@ -1,11 +1,28 @@
-<div>
-    <% @users.each do |user| %>
-        <div class="user_info">
-            <%= image_tag user.photo, size: "160x90", alt: "Edit Entry"%>
-            <div>
-                <h1><%= link_to user.name, user %></h1>
-                <p>Number of posts : <%= user.posts_count %></p>
-            </div>
-        </div>
-    <% end %>
+<div class="user_info">
+    <%= image_tag 'image.jpeg', size: "160x90", alt: "Edit Entry"%>
+        <div>
+            <h2>User name</h2>
+            <p>Number of posts : 4</p>
+    </div>
+</div>
+<div class="user_info">
+    <%= image_tag 'image.jpeg', size: "160x90", alt: "Edit Entry"%>
+        <div>
+            <h2>User name</h2>
+            <p>Number of posts : 4</p>
+    </div>
+</div>
+<div class="user_info">
+    <%= image_tag 'image.jpeg', size: "160x90", alt: "Edit Entry"%>
+        <div>
+            <h2>User name</h2>
+            <p>Number of posts : 4</p>
+    </div>
+</div>
+<div class="user_info">
+    <%= image_tag 'image.jpeg', size: "160x90", alt: "Edit Entry"%>
+        <div>
+            <h2>User name</h2>
+            <p>Number of posts : 4</p>
+    </div>
 </div>
