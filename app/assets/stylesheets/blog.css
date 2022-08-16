@@ -32,10 +32,11 @@ header a {
 
 header h1 {
   color: azure;
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: absolute;
   bottom: 10px;
-  left: 40%;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 5px;
   border: 2px solid azure;
 }

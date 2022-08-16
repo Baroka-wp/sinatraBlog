@@ -28,8 +28,8 @@ a {
 }
 
 .user_details img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
 
@@ -38,7 +38,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .user_details .bio {
