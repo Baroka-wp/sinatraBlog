@@ -41,7 +41,7 @@
 
 .post_body {
   font-size: 1rem;
-  background-color: #6c69691a;
+  background-color: #a19f9f1a;
   padding: 5px;
   margin-bottom: 15px;
 }
@@ -57,4 +57,37 @@
 .post_show .user {
   display: flex;
   flex-direction: column;
+}
+
+.add_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add_form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add_form form input[type="text"], textarea  {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #fa807228;
+  outline: none;
+}
+
+.add_form form textarea {
+  height: 40vh;
+  resize: none;
+}
+
+.add_form form input[type="submit"] {
+  cursor: pointer;
+  background-color: #fa807228;
+  padding: 10px;
+  border: none;
+  align-self: flex-start;
 }
