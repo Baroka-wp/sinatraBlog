@@ -60,6 +60,20 @@
   flex-direction: column;
 }
 
+.add_form form input[type="text"],
+textarea {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #fa807228;
+  outline: none;
+}
+
+.comments_form textarea {
+  width: 100%;
+  height: 5vh;
+  resize: none;
+}
+
 .add_form {
   display: flex;
   flex-direction: column;
@@ -73,13 +87,6 @@
   gap: 10px;
 }
 
-.add_form form input[type="text"], textarea  {
-  padding: 5px;
-  width: 100%;
-  border: 1px solid #fa807228;
-  outline: none;
-}
-
 .add_form form textarea {
   height: 40vh;
   resize: none;
@@ -91,12 +98,6 @@ input[type="submit"] {
   padding: 10px;
   border: none;
   align-self: flex-start;
-}
-
-.comments_form textarea {
-  width: 100%;
-  height: 5vh;
-  resize: none;
 }
 
 .like_post {
