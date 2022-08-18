@@ -27,5 +27,4 @@ RSpec.describe Post, type: :view do
     expect(current_path).to eq(user_posts_path(@user.id))
     expect(page).to have_content('New Title')
   end
-  
 end
