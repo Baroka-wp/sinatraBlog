@@ -22,11 +22,13 @@ gem 'font-awesome-sass', '~> 6.1.2'
 gem 'image_processing', '~> 1.2'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 4.0.0.beta2'
 end
 
 group :development do
+  gem 'bullet', group: 'development'
   gem 'web-console'
   # gem "spring"
 end

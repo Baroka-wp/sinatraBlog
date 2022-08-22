@@ -1,28 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
-  before { subject.save }
+  before :each do
+    @user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+  end
 
   context 'validations' do
     it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+      @user.save
+      expect(@user).to be_valid
     end
 
     it 'is not valid without a name' do
-      subject.name = nil
-      expect(subject).to_not be_valid
+      @user.name = nil
+      @user.save
+      expect(@user).to_not be_valid
     end
 
     it 'is not valid with postcounter in string type' do
-      subject.posts_count = 'er'
-      expect(subject).to_not be_valid
+      @user.posts_count = 'er'
+      @user.save
+      expect(@user).to_not be_valid
     end
 
     it 'is valid without a photo or bio' do
-      subject.photo = nil
-      subject.bio = nil
-      expect(subject).to be_valid
+      @user.photo = nil
+      @user.bio = nil
+      @user.save
+      expect(@user).to be_valid
     end
   end
   context 'associations' do
@@ -41,7 +46,8 @@ RSpec.describe User, type: :model do
   end
   context 'Costum methods' do
     it 'is showing the three last posts' do
-      expect(subject.three_laster_posts.count).to eq(subject.posts.order('created_at').last(3).count)
+      @user.save
+      expect(@user.three_laster_posts.count).to eq(@user.posts.order('created_at').last(3).count)
     end
   end
 end

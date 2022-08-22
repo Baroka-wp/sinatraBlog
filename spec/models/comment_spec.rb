@@ -1,26 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-  post = Post.create(title: 'Title', text: 'Body', user_id: user.id)
-  subject { Comment.new(text: 'Comment', user_id: user.id, post_id: post.id) }
-  before { subject.save }
+  before :each do
+    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+    @post = Post.create(title: 'Title', text: 'Body', user_id: @user.id)
+  end
 
   context 'validations' do
     it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+      comment = @user.comments.create(text:'comment', post_id: @post.id)
+      expect(comment).to be_valid
     end
     it 'is not valid without a text' do
-      subject.text = nil
+      comment = @user.comments.create(text: nil, post_id: @post.id)
       expect(subject).to_not be_valid
     end
     it 'is not valid without a user_id' do
-      subject.user_id = nil
+      comment = @post.comments.create(text: "comment")
       expect(subject).to_not be_valid
     end
     it 'is not valid without a post_id' do
-      subject.post_id = nil
-      expect(subject).to_not be_valid
+      comment = @user.comments.create(text: 'Comment')
+      expect(comment).to_not be_valid
     end
   end
   context 'associations' do
@@ -35,8 +36,9 @@ RSpec.describe Comment, type: :model do
   end
   context 'Costum methods' do
     it 'update post comment count' do
-      subject.update_comment_counter
-      expect(subject.post.comments_count).to eq(1)
+      comment = @user.comments.create(text:'comment', post_id: @post.id)
+      comment.update_comment_counter
+      expect(comment.post.comments_count).to eq(1)
     end
   end
 end

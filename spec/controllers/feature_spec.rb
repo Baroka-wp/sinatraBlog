@@ -15,12 +15,12 @@ RSpec.describe 'Response body include correct placeholder', type: :feature do
   describe 'Visit #index' do
     it 'content rigth content' do
       visit root_path
-      expect(page).to have_content('User name')
+      expect(page).to have_content('Tom')
     end
   end
   describe 'Visit #show' do
     it 'content user bio' do
-      visit('/users/1')
+      visit user_path(@user.id)
       expect(page).to have_content('Bio')
     end
   end
