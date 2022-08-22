@@ -11,13 +11,13 @@ RSpec.describe Post, type: :view do
     it 'Should display post\s title' do
       expect(page).to have_content('Title')
     end
-    it 'Should display post author name' do 
+    it 'Should display post author name' do
       expect(page).to have_content('by Tom')
     end
-    it "should display post s comment counter" do
+    it 'should display post s comment counter' do
       expect(page).to have_content('0 comments')
     end
-    it "should display post s likes counter" do
+    it 'should display post s likes counter' do
       expect(page).to have_content('0 likes')
     end
     it 'Should display post\s text' do
@@ -29,7 +29,6 @@ RSpec.describe Post, type: :view do
       expect(page).to have_content('Comment by: Tom')
     end
   end
-
 
   it 'Should content Add post button' do
     visit user_path(@user.id)

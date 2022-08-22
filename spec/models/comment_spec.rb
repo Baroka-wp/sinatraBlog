@@ -8,20 +8,20 @@ RSpec.describe Comment, type: :model do
 
   context 'validations' do
     it 'is valid with valid attributes' do
-      comment = @user.comments.create(text:'comment', post_id: @post.id)
-      expect(comment).to be_valid
+      @comment = @user.comments.create(text: 'comment', post_id: @post.id)
+      expect(@comment).to be_valid
     end
     it 'is not valid without a text' do
-      comment = @user.comments.create(text: nil, post_id: @post.id)
-      expect(subject).to_not be_valid
+      @comment = @user.comments.create(text: nil, post_id: @post.id)
+      expect(@comment).to_not be_valid
     end
     it 'is not valid without a user_id' do
-      comment = @post.comments.create(text: "comment")
-      expect(subject).to_not be_valid
+      @comment = @post.comments.create(text: 'comment')
+      expect(@comment).to_not be_valid
     end
     it 'is not valid without a post_id' do
-      comment = @user.comments.create(text: 'Comment')
-      expect(comment).to_not be_valid
+      @comment = @user.comments.create(text: 'Comment')
+      expect(@comment).to_not be_valid
     end
   end
   context 'associations' do
@@ -36,9 +36,9 @@ RSpec.describe Comment, type: :model do
   end
   context 'Costum methods' do
     it 'update post comment count' do
-      comment = @user.comments.create(text:'comment', post_id: @post.id)
-      comment.update_comment_counter
-      expect(comment.post.comments_count).to eq(1)
+      @comment = @user.comments.create(text: 'comment', post_id: @post.id)
+      @comment.update_comment_counter
+      expect(@comment.post.comments_count).to eq(1)
     end
   end
 end

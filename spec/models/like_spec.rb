@@ -8,16 +8,16 @@ RSpec.describe Like, type: :model do
 
   context 'validations' do
     it 'is valid with valid attributes' do
-      like = @user.likes.create(post_id: @post.id)
-      expect(like).to be_valid
+      @like = @user.likes.create(post_id: @post.id)
+      expect(@like).to be_valid
     end
     it 'is not valid without a post_id' do
-      like = @user.likes.create
-      expect(subject).to_not be_valid
+      @like = @user.likes.create
+      expect(@like).to_not be_valid
     end
     it 'is not valid without a user_id' do
-      like = @post.likes.create
-      expect(subject).to_not be_valid
+      @like = @post.likes.create
+      expect(@like).to_not be_valid
     end
   end
   context 'associations' do
@@ -32,9 +32,9 @@ RSpec.describe Like, type: :model do
   end
   context 'Costum methods' do
     it 'update post like count' do
-      like = @user.likes.create(post_id: @post.id)
-      like.update_like_counter
-      expect(like.post.likes_count).to eq(1)
+      @like = @user.likes.create(post_id: @post.id)
+      @like.update_like_counter
+      expect(@like.post.likes_count).to eq(1)
     end
   end
 end

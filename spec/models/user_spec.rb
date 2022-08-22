@@ -5,30 +5,28 @@ RSpec.describe User, type: :model do
     @user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
   end
 
-  context 'validations' do
-    it 'is valid with valid attributes' do
-      @user.save
-      expect(@user).to be_valid
-    end
+  it 'is valid with valid attributes' do
+    @user.save
+    expect(@user).to be_valid
+  end
 
-    it 'is not valid without a name' do
-      @user.name = nil
-      @user.save
-      expect(@user).to_not be_valid
-    end
+  it 'is not valid without a name' do
+    @user.name = nil
+    @user.save
+    expect(@user).to_not be_valid
+  end
 
-    it 'is not valid with postcounter in string type' do
-      @user.posts_count = 'er'
-      @user.save
-      expect(@user).to_not be_valid
-    end
+  it 'is not valid with postcounter in string type' do
+    @user.posts_count = 'er'
+    @user.save
+    expect(@user).to_not be_valid
+  end
 
-    it 'is valid without a photo or bio' do
-      @user.photo = nil
-      @user.bio = nil
-      @user.save
-      expect(@user).to be_valid
-    end
+  it 'is valid without a photo or bio' do
+    @user.photo = nil
+    @user.bio = nil
+    @user.save
+    expect(@user).to be_valid
   end
   context 'associations' do
     it 'has many posts' do
