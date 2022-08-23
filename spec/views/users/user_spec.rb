@@ -88,22 +88,24 @@ RSpec.describe User, type: :view do
       expect(page).to have_content('User1 Title')
     end
   end
-  it 'Should display post text' do
-    visit user_posts_path(@user1.id)
-    expect(page).to have_content('Body1')
-  end
-  it 'Should display comments counter' do
-    visit user_post_path(@user1.id, @user1.posts.first.id)
-    expect(page).to have_content('0 comments')
-  end
-  it 'Should display first comment' do
-    @user1.comments.create(post_id: @user1.posts.first.id, text: 'Comment1')
-    visit user_posts_path(@user1.id)
-    expect(page).to have_content('Comment1')
-  end
-  it 'Should redirect to post s page' do
-    visit user_posts_path(@user1.id)
-    click_link 'User1 Title'
-    expect(current_path).to eq(user_post_path(@user1.id, @user1.posts.first.id))
+  context 'User post show page' do
+    it 'Should display post text' do
+      visit user_posts_path(@user1.id)
+      expect(page).to have_content('Body1')
+    end
+    it 'Should display comments counter' do
+      visit user_post_path(@user1.id, @user1.posts.first.id)
+      expect(page).to have_content('0 comments')
+    end
+    it 'Should display first comment' do
+      @user1.comments.create(post_id: @user1.posts.first.id, text: 'Comment1')
+      visit user_posts_path(@user1.id)
+      expect(page).to have_content('Comment1')
+    end
+    it 'Should redirect to post s page' do
+      visit user_posts_path(@user1.id)
+      click_link 'User1 Title'
+      expect(current_path).to eq(user_post_path(@user1.id, @user1.posts.first.id))
+    end
   end
 end
