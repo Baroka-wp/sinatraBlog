@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
@@ -6,7 +7,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.js { render :index }
-        # flash[:success] = 'Comment created successfully'
+        flash[:success] = 'Comment created successfully'
       else
         format.html { redirect_to user_post_path(current_user, @post) }
       end

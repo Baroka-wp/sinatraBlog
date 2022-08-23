@@ -11,12 +11,13 @@
   </head>
 
   <body>
+    <%= render 'shared/log_menu' %>
     <%= render 'shared/navbar' %>
-    <span class="flash">
+    <div class="flash">
       <% flash.each do |name, message| %>
         <div class="<%= name %>"><%= message %></div>
       <% end %>
-    </span>
+    </div>
     <%= yield %>
   </body>
 </html>

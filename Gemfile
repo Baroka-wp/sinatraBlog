@@ -29,7 +29,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'bullet', group: 'development'
   gem 'web-console'
   gem 'letter_opener_web'
   # gem "spring"
