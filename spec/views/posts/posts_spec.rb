@@ -29,14 +29,13 @@ RSpec.describe Post, type: :view do
       expect(page).to have_content('Comment by: Tom')
     end
   end
-  
+
   context 'Post index page' do
     it 'Should content Add post button' do
       visit user_path(@user.id)
       expect(page).to have_content('Title')
       expect(page).to have_content('Add post')
     end
-
 
     it 'Should display add post form' do
       visit user_path(@user.id)
@@ -55,4 +54,3 @@ RSpec.describe Post, type: :view do
     end
   end
 end
-
