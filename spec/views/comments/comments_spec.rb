@@ -22,13 +22,4 @@ RSpec.describe Comment, type: :view, js: true do
     click_link 'Title'
     expect(page).to have_content('0 comment')
   end
-
-  # it 'Should add comment' do
-  #   visit user_post_path(@user.id, @user.posts.first.id)
-  #   fill_in 'comment[text]', with: 'New Comment'
-  #   click_button 'Submit new comment'
-  #   response.
-  #   expect(current_path).to eq(user_post_path(@user.id, @user.posts.first.id))
-  #   expect(page).to have_content('New Comment')
-  # end
 end
