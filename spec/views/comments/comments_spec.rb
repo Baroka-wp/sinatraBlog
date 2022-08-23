@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Comment, type: :view do
+RSpec.describe Comment, type: :view, js: true do
   before :each do
     @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     @user.posts.create(title: 'Title', text: 'Body')
@@ -22,12 +22,4 @@ RSpec.describe Comment, type: :view do
     click_link 'Title'
     expect(page).to have_content('0 comment')
   end
-
-  # it 'Should add comment' do
-  #   visit user_post_path(@user.id, @user.posts.first.id)
-  #   fill_in 'comment[text]', with: 'New Comment'
-  #   click_button 'Submit new comment', wait: 20
-  #   expect(current_path).to eq(user_post_path(@user.id, @user.posts.first.id))
-  #   expect(page).to have_content('New Comment')
-  # end
 end

@@ -1,36 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-  subject { Post.new(title: 'Title', text: 'Body', user_id: user.id) }
-  before { subject.save }
+  before :each do
+    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+  end
 
   context 'validations' do
     it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+      post = Post.create(title: 'Title', text: 'Body', user_id: @user.id)
+      expect(post).to be_valid
     end
     it 'is not valid without a title' do
-      subject.title = nil
-      expect(subject).to_not be_valid
+      post = Post.create(title: nil, text: 'Body', user_id: @user.id)
+      expect(post).to_not be_valid
     end
     it 'is not valid with a title exceed 250 characters' do
-      subject.title = 'a' * 251
-      expect(subject).to_not be_valid
+      title = 'a' * 251
+      post = Post.create(title: title, text: 'Body', user_id: @user.id)
+      expect(post).to_not be_valid
     end
+  end
+  context 'validations 2' do
     it 'is valid without a text' do
-      subject.text = nil
-      expect(subject).to be_valid
+      post = Post.create(title: 'title', text: nil, user_id: @user.id)
+      expect(post).to_not be_valid
     end
     it 'is not valid without a user_id' do
-      subject.user_id = nil
-      expect(subject).to_not be_valid
+      post = Post.create(title: 'title', text: 'Body')
+      expect(post).to_not be_valid
     end
     it 'is not valid with commentsCounter in string type' do
-      subject.comments_count = 'string'
-      expect(subject).to_not be_valid
+      post = Post.new(title: 'title', text: 'Body', user_id: @user.id)
+      post.comments_count = 'string'
+      expect(post).to_not be_valid
     end
     it 'is not valid with likesCounter in string type' do
-      subject.likes_count = 'string'
+      post = Post.new(title: 'title', text: 'Body', user_id: @user.id)
+      post.likes_count = 'string'
       expect(subject).to_not be_valid
     end
   end
@@ -46,7 +52,8 @@ RSpec.describe Post, type: :model do
   end
   context 'Costum methods' do
     it 'is showing the three last posts' do
-      expect(subject.five_laster_comments.count).to eq(subject.comments.order('created_at').last(5).count)
+      post = Post.new(title: 'title', text: 'Body', user_id: @user.id)
+      expect(post.five_laster_comments.count).to eq(post.comments.order('created_at').last(5).count)
     end
   end
 end
