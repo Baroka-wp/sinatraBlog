@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.js { render :index }
+        format.html { redirect_to user_post_path(current_user, @post) }
         flash[:success] = 'Comment created successfully'
       else
         format.html { redirect_to user_post_path(current_user, @post) }

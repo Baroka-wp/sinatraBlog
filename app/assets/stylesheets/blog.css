@@ -19,6 +19,10 @@ li {
   list-style: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   position: relative;
   height: 25vh;
@@ -80,10 +84,12 @@ footer {
   display: flex;
   justify-content: center;
 }
-.alert, .success, .notice {
-  padding: 5px 5px;
+
+.alert,
+.success,
+.notice {
   background-color: #6aa69b;
-  border-radius:5px;
+  border-radius: 5px;
   padding: 5px 10px;
   color: azure;
 }
