@@ -3,7 +3,12 @@
         <p>0 comment</p>
     <% else %>
         <% post.comments.each do |comment| %>
-            <p>~> <%= comment.text %> <span>by: <%= comment.user.name %><span></p>
+            <p>
+                <%= comment.text %> <span>by: <%= comment.user.name %><span>
+            </p>
+            <%if can? :manage, comment%>
+                <%=button_to "delete", post_comment_path(post.id, comment.id), method: :delete,  data: {confirm: 'Are You Sure You Want to Delete This Post'}, class: 'log_out'%>
+            <% end %>
         <% end %>
     <% end %>
 </div>
