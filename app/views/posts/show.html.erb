@@ -5,6 +5,7 @@
             <h3>
                 <%= @post.title %>
                 <span> by <%= @post.user.name %></span>
+                <%=button_to "delete", post_path, method: :delete,  data: {confirm: 'Are You Sure You Want to Delete This Post'}, class: 'log_out'%>
             </h3>
             <p><%= @post.comments_count %> comments | <%= @post.likes_count %> likes</p>
         </section>
