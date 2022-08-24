@@ -1,13 +1,13 @@
 require 'faker'
 
-lorem = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui 
-ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci 
-velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
-commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
-vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+# lorem = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+# totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+# Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui 
+# ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci 
+# velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+# Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+# commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+# vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 
 # images = [
 #     'https://images.unsplash.com/photo-1660503427782-f9c627e7066e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80',
@@ -16,9 +16,9 @@ vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 # ]
 
 # # --- Create Users ---
-# first_user = User.create(name: 'Tom', photo: images[0], bio: 'Teacher from Mexico.')
-# second_user = User.create(name: 'Lilly', photo: images[1], bio: 'Teacher from Poland.')
-# third_user = User.create(name: 'Path', photo: images[2], bio: 'Teacher from France.')
+# first_user = User.create(email: 'tom@dev.co', password: 'tom123', name: 'Tom', photo: images[0], bio: 'Teacher from Mexico.')
+# second_user = User.create(email: 'lilly@dev.co', password: 'lilly123', name: 'Lilly', photo: images[1], bio: 'Teacher from Poland.')
+# third_user = User.create(email: 'path@dev.co', password: 'path123', name: 'Path', photo: images[2], bio: 'Teacher from France.')
 
 
 # # --- Create Posts ---

@@ -15,6 +15,14 @@ p {
   padding: 0;
 }
 
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
 header {
   position: relative;
   height: 25vh;
@@ -22,7 +30,7 @@ header {
   background-image: url('https://images.unsplash.com/photo-1660536754523-13d686a48178?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=857&q=80');
   background-size: cover;
   background-position: center;
-  margin-bottom: 20px;
+  margin-bottom: 3px;
 }
 
 header a {
@@ -32,7 +40,7 @@ header a {
 
 header h1 {
   color: azure;
-  font-size: 1.5rem;
+  font-size: 1rem;
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -51,4 +59,38 @@ footer {
   text-align: center;
   color: azure;
   background-color: black;
+}
+
+.log_menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  height: 30px;
+  padding: 0 10px;
+  background-color: #ffe4c463;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.log_out {
+  background-color: salmon;
+  border: none;
+  color: azure;
+  padding: 5px 10px;
+}
+
+.flash {
+  display: flex;
+  justify-content: center;
+}
+
+.alert,
+.success,
+.notice {
+  background-color: #6aa69ba1;
+  width: 90%;
+  text-align: center;
+  padding: 5px 10px;
+  color: azure;
 }

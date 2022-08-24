@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_user, only: %i[index show]
+  before_action :authenticate_user!, only: %i[new create]
+
   def index
-    @posts = @user.posts.includes(:comments)
+    @posts = @user.posts.includes(comments: [:user])
   end
 
   def show
@@ -16,7 +18,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to user_posts_path(current_user)
-      # flash[:success] = 'Post created successfully'
+      flash[:success] = 'Post created successfully'
     else
       render :new
     end

@@ -18,9 +18,10 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'unsplash'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+gem 'devise'
 gem 'font-awesome-sass', '~> 6.1.2'
 gem 'image_processing', '~> 1.2'
-
+gem 'rexml'
 group :development, :test do
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -28,7 +29,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'bullet', group: 'development'
+  gem 'letter_opener_web'
   gem 'web-console'
   # gem "spring"
 end

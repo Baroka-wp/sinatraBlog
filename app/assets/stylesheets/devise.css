@@ -1,0 +1,39 @@
+.devise_form h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.devise_form {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.field.email input,
+.field.password input {
+  width: 100%;
+  border: 0.7px solid #ccc;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.field.email input:focus,
+.field.password input:focus {
+  outline: none;
+  border: 0.7px solid salmon;
+}
+
+.actions input[type="submit"] {
+  background-color: salmon;
+  width: 100%;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+}
