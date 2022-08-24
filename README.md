@@ -72,6 +72,7 @@ $ rspec
 
 - Gmail: [![Gmail Badge](https://img.shields.io/badge/-baroka--Irotori-white?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:birotori@gmail.com)
   
+ 
   👤 **Ushindi Gedeon** 
 
 - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-baroka-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://linkedin.com/in/ushindi-gedeon)
