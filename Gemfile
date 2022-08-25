@@ -43,3 +43,4 @@ group :test do
 end
 
 gem "devise-jwt", "~> 0.9.0"
+gem 'rack-cors'
