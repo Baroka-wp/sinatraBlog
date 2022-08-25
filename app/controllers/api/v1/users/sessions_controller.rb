@@ -1,5 +1,5 @@
-class Users::SessionsController < Devise::SessionsController
-    respond_to :json
+class Api::V1::Users::SessionsController < Devise::SessionsController
+    respond_to :json, :html
 
     private
     def respond_with(resource, _opts = {})

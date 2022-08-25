@@ -1,8 +1,8 @@
-class ApplicationController < ActionController::API
-  # include Response 
+class ApplicationController < ActionController::Base
+  include Response 
   include ExceptionHandler
 
-  # protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
   before_action :update_allowed_parameters, if: :devise_controller?
 
   protected
