@@ -2,7 +2,7 @@
 
 # Hello Rails
 
-Study RoR base on Blog project.
+Study RoR based on a Blog project. a blog website. creating a fully functional website that shows the list of posts and empowers readers to interact with them by adding comments and liking posts.
 
 ## Built With
 
@@ -14,7 +14,7 @@ Study RoR base on Blog project.
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+You can get a local copy up and running following these simple steps.
 
 ### Prerequisites
 
