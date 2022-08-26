@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   root 'users#index'
     # devise
     devise_for :users,
-    controllers: {
-      sessions: 'users/sessions',
-      registrations: 'users/registrations'
-      }
+        controllers: {
+            sessions: 'users/sessions',
+            registrations: 'users/registrations'
+        }
   
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new]
@@ -31,11 +31,6 @@ Rails.application.routes.draw do
         resources :comments
         resources :likes
       end
-      devise_for :users,
-          controllers: {
-            sessions: 'users/sessions',
-            registrations: 'users/registrations'
-            }
     end
   end
 end

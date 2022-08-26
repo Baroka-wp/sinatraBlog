@@ -5,19 +5,19 @@ class Api::V1::CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comments = @post.comments
     respond_to do |format|
-      format.json {render json: @comments, status: :ok}
+      format.json { render json: @comments, status: :ok }
     end
   end
-  
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.json { render json: { message: 'comment created successfully'}, status: :ok }
+        format.json { render json: { message: 'comment created successfully' }, status: :ok }
       else
-        format.json { render json: { message: 'Erros'}, status: :unprocessable_entity }
+        format.json { render json: { message: 'Erros' }, status: :unprocessable_entity }
       end
     end
   end
@@ -26,7 +26,7 @@ class Api::V1::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.json { render json: { message: 'Comment deleted successfully'}, status: :ok }
+      format.json { render json: { message: 'Comment deleted successfully' }, status: :ok }
     end
   end
 

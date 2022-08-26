@@ -6,14 +6,14 @@ class Api::V1::PostsController < ApplicationController
   def index
     @posts = @user.posts.includes(comments: [:user])
     respond_to do |format|
-      format.json { render :json => @posts }
+      format.json { render json: @posts }
     end
   end
 
   def show
     @post = @user.posts.includes(comments: [:user]).find(params[:id])
     respond_to do |format|
-      format.json { render :json => @post }
+      format.json { render json: @post }
     end
   end
 
@@ -24,7 +24,7 @@ class Api::V1::PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      render json: { message: 'Post created successfully'}, status: :ok
+      render json: { message: 'Post created successfully' }, status: :ok
     else
       render :new
     end

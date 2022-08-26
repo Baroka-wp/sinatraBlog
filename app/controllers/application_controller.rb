@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :update_allowed_parameters, if: :devise_controller?
-  protect_from_forgery with: :null_session, 
-    if: Proc.new { |c| c.request.format =~ %r{application/json} }
+  protect_from_forgery with: :null_session,
+                       if: proc { |c| c.request.format =~ %r{application/json} }
 
-
-  def after_sign_out_path_for(resource)
+  def after_sign_out_path_for(_resource)
     request.referrer
   end
+
   protected
 
   def update_allowed_parameters
