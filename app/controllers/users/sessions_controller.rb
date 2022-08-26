@@ -1,5 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
   respond_to :html, :json
+
   private
   def respond_with(resource, _opts = {})
     render json: { message: 'Logged.' }, status: :ok

@@ -31,6 +31,11 @@ Rails.application.routes.draw do
         resources :comments
         resources :likes
       end
+      devise_for :users,
+          controllers: {
+            sessions: 'users/sessions',
+            registrations: 'users/registrations'
+            }
     end
   end
 end
