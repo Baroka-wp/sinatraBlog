@@ -2,7 +2,7 @@
 
 # Hello Rails
 
-Study RoR based on a Blog project. a blog website. creating a fully functional website that shows the list of posts and empowers readers to interact with them by adding comments and liking posts.
+A RoR Blog project. Creating a fully functional website that shows the list of posts and empowers readers to interact with them by adding comments and liking posts. The application also provides an endpoint for user authentication.
 
 ## Built With
 
@@ -21,6 +21,9 @@ You can get a local copy up and running following these simple steps.
 - [x] A web browser like Google Chrome.
 - [x] A code editor like Visual Studio Code with Git and Ruby.
 
+### API DOCUMENTATION
+
+https://documenter.getpostman.com/view/15224667/VUqypEbM
 
 ### Install and Usage
 
