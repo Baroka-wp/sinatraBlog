@@ -23,10 +23,17 @@ gem 'devise'
 gem 'font-awesome-sass', '~> 6.1.2'
 gem 'image_processing', '~> 1.2'
 gem 'rexml'
+
+gem 'devise-jwt', '~> 0.9.0'
+gem 'rack-cors'
+gem 'rswag-api'
+gem 'rswag-ui'
+
 group :development, :test do
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'rswag-specs'
 end
 
 group :development do
@@ -41,6 +48,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem 'devise-jwt', '~> 0.9.0'
-gem 'rack-cors'
