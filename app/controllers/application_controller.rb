@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session, 
     if: Proc.new { |c| c.request.format =~ %r{application/json} }
 
+
+  def after_sign_out_path_for(resource)
+    request.referrer
+  end
   protected
 
   def update_allowed_parameters

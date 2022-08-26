@@ -24,8 +24,7 @@ class Api::V1::PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to user_posts_path(current_user)
-      flash[:success] = 'Post created successfully'
+      render json: { message: 'Post created successfully'}, status: :ok
     else
       render :new
     end

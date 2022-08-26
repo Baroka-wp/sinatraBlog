@@ -5,7 +5,7 @@ class Api::V1::CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comments = @post.comments
     respond_to do |format|
-      format.json {render :json => @comments}
+      format.json {render json: @comments, status: :ok}
     end
   end
   
@@ -15,11 +15,9 @@ class Api::V1::CommentsController < ApplicationController
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.js { render :index }
-        format.html { redirect_to user_post_path(current_user, @post) }
-        flash[:success] = 'Comment created successfully'
+        format.json { render json: { message: 'comment created successfully'}, status: :ok }
       else
-        format.html { redirect_to user_post_path(current_user, @post) }
+        format.json { render json: { message: 'Erros'}, status: :unprocessable_entity }
       end
     end
   end
@@ -28,9 +26,7 @@ class Api::V1::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.js { render :index }
-      format.html { redirect_to user_post_path(current_user, @comment.post) }
-      flash[:success] = 'Comment deleted successfully'
+      format.json { render json: { message: 'Comment deleted successfully'}, status: :ok }
     end
   end
 
