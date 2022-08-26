@@ -2,7 +2,7 @@
 
 # Hello Rails
 
-Study RoR base on Blog project.
+Study RoR base on Blog project. a blog website. creating a fully functional website that shows the list of posts and empowers readers to interact with them by adding comments and liking posts.
 
 ## Built With
 
