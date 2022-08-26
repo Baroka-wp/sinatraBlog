@@ -14,7 +14,7 @@ Study RoR based on a Blog project. a blog website. creating a fully functional w
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+You can get a local copy up and running following these simple steps.
 
 ### Prerequisites
 
